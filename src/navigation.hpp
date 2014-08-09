@@ -1,7 +1,7 @@
-#include "gllibs.h"
+#include "gllibs.hpp"
 #include <string>
 
-#include "util.h"
+#include "util.hpp"
 
 #ifndef _NAVIGATION_H
 #define _NAVIGATION_H

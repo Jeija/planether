@@ -1,20 +1,20 @@
 #include <tgmath.h>
 #include <math.h>
 
-#include "environment.h"
-#include "spaceship.h"
-#include "particle.h"
-#include "drawutil.h"
-#include "keyboard.h"
-#include "gamevars.h"
-#include "shader.h"
-#include "camera.h"
-#include "config.h"
-#include "gllibs.h"
-#include "player.h"
-#include "debug.h"
-#include "game.h"
-#include "util.h"
+#include "environment.hpp"
+#include "spaceship.hpp"
+#include "particle.hpp"
+#include "drawutil.hpp"
+#include "keyboard.hpp"
+#include "gamevars.hpp"
+#include "shader.hpp"
+#include "camera.hpp"
+#include "config.hpp"
+#include "gllibs.hpp"
+#include "player.hpp"
+#include "debug.hpp"
+#include "game.hpp"
+#include "util.hpp"
 
 
 // 200km x 100km x 500km

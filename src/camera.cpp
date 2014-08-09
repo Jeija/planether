@@ -4,21 +4,21 @@
 #include <string>
 #include <vector>
 
-#include "gllibs.h"
+#include "gllibs.hpp"
 
-#include "environment.h"
-#include "spaceship.h"
-#include "gamevars.h"
-#include "objects.h"
-#include "config.h"
-#include "camera.h"
-#include "player.h"
-#include "shader.h"
-#include "shader.h"
-#include "skybox.h"
-#include "debug.h"
-#include "game.h"
-#include "util.h"
+#include "environment.hpp"
+#include "spaceship.hpp"
+#include "gamevars.hpp"
+#include "objects.hpp"
+#include "config.hpp"
+#include "camera.hpp"
+#include "player.hpp"
+#include "shader.hpp"
+#include "shader.hpp"
+#include "skybox.hpp"
+#include "debug.hpp"
+#include "game.hpp"
+#include "util.hpp"
 
 /**
  * \brief The Camera renders objects on the screen based on the player's view
@@ -72,7 +72,7 @@ void Camera::render()
 	/*********************************
 		Static World Matrix
 	*********************************/
-	if (!config->getBool("enable_anaglyph", false))
+	if (!config->getBool("enable_anagly.hpp", false))
 	{
 		// Normal mode, render the scene without any color mask / offset
 		beginStaticWorldMatrix(window_w, window_h);
@@ -105,7 +105,7 @@ void Camera::render()
 	/***************************
 		World Matrix
 	***************************/
-	if (!config->getBool("enable_anaglyph", false))
+	if (!config->getBool("enable_anagly.hpp", false))
 	{
 		// Normal mode, render the scene without any color mask / offset
 		beginWorldMatrix(window_w, window_h);
@@ -305,7 +305,7 @@ void Camera::beginStaticWorldMatrix(int window_w, int window_h, camera_eye eye)
 	SimpleVec3d upaxis = m_player->getUpAxis();
 
 	// If an eye is selected (not center), calculate a vector to move the camera by
-	float ofs = config->getDouble("anaglyph_skybox_depth", 0.2) * USC * eye;
+	float ofs = config->getDouble("anaglyph_skybox_dep.hpp", 0.2) * USC * eye;
 	SimpleVec3d offset = m_player->getRightAxis() * ofs;;
 	SimpleVec3d lookat = lookdir + offset;
 

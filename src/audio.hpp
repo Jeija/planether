@@ -1,9 +1,9 @@
-#include "allibs.h"
+#include "allibs.hpp"
 #include <string>
 #include <vector>
 
-#include "util.h"
-#include "objects.h"
+#include "util.hpp"
+#include "objects.hpp"
 
 #ifndef _AUDIO_H
 #define _AUDIO_H

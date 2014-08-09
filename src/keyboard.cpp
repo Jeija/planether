@@ -1,17 +1,17 @@
 #include <iostream>
 #include <math.h>
-#include "gllibs.h"
+#include "gllibs.hpp"
 
-#include "environment.h"
-#include "keyboard.h"
-#include "gamevars.h"
-#include "camera.h"
-#include "config.h"
-#include "config.h"
-#include "mouse.h"
-#include "util.h"
-#include "game.h"
-#include "hud.h"
+#include "environment.hpp"
+#include "keyboard.hpp"
+#include "gamevars.hpp"
+#include "camera.hpp"
+#include "config.hpp"
+#include "config.hpp"
+#include "mouse.hpp"
+#include "util.hpp"
+#include "game.hpp"
+#include "hud.hpp"
 
 void process_keyboard_layout_default(bool keystate[255], bool keystate_special[255], float dtime, void *param /* unused */)
 {

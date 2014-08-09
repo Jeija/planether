@@ -2,7 +2,7 @@
 #include <vector>
 #include <mutex>
 
-#include "util.h"
+#include "util.hpp"
 
 #ifndef _DRAWUTIL_H
 #define _DRAWUTIL_H

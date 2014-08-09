@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "util.h"
+#include "util.hpp"
 
 class StaticEnvironment;
 class WorldEnvironment;

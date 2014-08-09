@@ -1,8 +1,8 @@
-#include "navigation.h"
-#include "quatutil.h"
-#include "teleport.h"
-#include "config.h"
-#include "debug.h"
+#include "navigation.hpp"
+#include "quatutil.hpp"
+#include "teleport.hpp"
+#include "config.hpp"
+#include "debug.hpp"
 
 
 Navigator::Navigator() :

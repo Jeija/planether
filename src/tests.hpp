@@ -1,9 +1,9 @@
 #ifndef TESTS_H
 #define TESTS_H
 
-#include "objects.h"
-#include "player.h"
-#include "util.h"
+#include "objects.hpp"
+#include "player.hpp"
+#include "util.hpp"
 
 void mouse_trigger_shot(int button, int state, int x, int y, void *unused);
 

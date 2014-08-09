@@ -1,9 +1,9 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include "util.h"
-#include "objects.h"
-#include "teleport.h"
+#include "util.hpp"
+#include "objects.hpp"
+#include "teleport.hpp"
 
 class WorldEnvironment;
 class Player;

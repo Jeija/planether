@@ -1,7 +1,7 @@
 #include <AL/al.h>
 #include <AL/alc.h>
 
-#include "config.h"
+#include "config.hpp"
 
 #ifndef _ALLIBS_H
 #define _ALLIBS_H

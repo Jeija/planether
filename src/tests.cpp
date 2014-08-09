@@ -1,13 +1,13 @@
 #include <iostream>
-#include "gllibs.h"
+#include "gllibs.hpp"
 
-#include "environment.h"
-#include "gamevars.h"
-#include "player.h"
-#include "config.h"
-#include "tests.h"
-#include "game.h"
-#include "util.h"
+#include "environment.hpp"
+#include "gamevars.hpp"
+#include "player.hpp"
+#include "config.hpp"
+#include "tests.hpp"
+#include "game.hpp"
+#include "util.hpp"
 
 void mouse_trigger_shot(int button, int state, int x, int y, void *unused)
 {

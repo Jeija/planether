@@ -3,10 +3,10 @@
 #include <math.h>
 #include <string>
 
-#include "quatutil.h"
-#include "config.h"
-#include "debug.h"
-#include "util.h"
+#include "quatutil.hpp"
+#include "config.hpp"
+#include "debug.hpp"
+#include "util.hpp"
 
 /*
 	SimpleVec3d:

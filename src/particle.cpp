@@ -1,12 +1,12 @@
-#include "environment.h"
-#include "particle.h"
-#include "gamevars.h"
-#include "camera.h"
-#include "gllibs.h"
-#include "shader.h"
-#include "player.h"
-#include "game.h"
-#include "util.h"
+#include "environment.hpp"
+#include "particle.hpp"
+#include "gamevars.hpp"
+#include "camera.hpp"
+#include "gllibs.hpp"
+#include "shader.hpp"
+#include "player.hpp"
+#include "game.hpp"
+#include "util.hpp"
 
 /*
 	Fire

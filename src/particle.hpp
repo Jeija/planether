@@ -1,6 +1,6 @@
-#include "gllibs.h"
-#include "objects.h"
-#include "util.h"
+#include "gllibs.hpp"
+#include "objects.hpp"
+#include "util.hpp"
 
 #ifndef _PARTICLE_H
 #define _PARTICLE_H

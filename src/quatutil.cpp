@@ -3,9 +3,9 @@
 // especially the RotationBetweenVectors function is copied and adapted to Planethers needs
 // e.g. make use of SimpleVec3d and crossProduct, dotProduct etc.
 
-#include "quatutil.h"
-#include "debug.h"
-#include "util.h"
+#include "quatutil.hpp"
+#include "debug.hpp"
+#include "util.hpp"
 
 glm::quat RotationBetweenVectors(SimpleVec3d start, SimpleVec3d dest)
 {

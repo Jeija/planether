@@ -1,12 +1,12 @@
-#include "gllibs.h"
+#include "gllibs.hpp"
 #include <ctime>
 
-#include "drawutil.h"
-#include "gamevars.h"
-#include "config.h"
-#include "debug.h"
-#include "game.h"
-#include "util.h"
+#include "drawutil.hpp"
+#include "gamevars.hpp"
+#include "config.hpp"
+#include "debug.hpp"
+#include "game.hpp"
+#include "util.hpp"
 
 
 // Less recursion results in better performance in comparison to quadtrees

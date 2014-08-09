@@ -1,10 +1,10 @@
 #include <string>
 
-#include "environment.h"
-#include "teleport.h"
-#include "gamevars.h"
-#include "objects.h"
-#include "game.h"
+#include "environment.hpp"
+#include "teleport.hpp"
+#include "gamevars.hpp"
+#include "objects.hpp"
+#include "game.hpp"
 
 TeleportTarget *getTeleportTarget(std::string name)
 {

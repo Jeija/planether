@@ -1,6 +1,6 @@
-#include "gllibs.h"
-#include "skybox.h"
-#include "gamevars.h"
+#include "gllibs.hpp"
+#include "skybox.hpp"
+#include "gamevars.hpp"
 
 GLfloat cubevertices[] =
 {

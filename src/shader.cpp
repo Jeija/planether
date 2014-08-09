@@ -6,13 +6,13 @@
 #include <sstream>
 #include <string>
 
-#include "gllibs.h"
+#include "gllibs.hpp"
 
-#include "gamevars.h"
-#include "shader.h"
-#include "config.h"
-#include "util.h"
-#include "game.h"
+#include "gamevars.hpp"
+#include "shader.hpp"
+#include "config.hpp"
+#include "util.hpp"
+#include "game.hpp"
 
 /*
 	Shader Class

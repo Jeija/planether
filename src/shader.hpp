@@ -1,6 +1,6 @@
 #include <vector>
 #include <string>
-#include "gllibs.h"
+#include "gllibs.hpp"
 
 #ifndef _SHADER_H
 #define _SHADER_H

@@ -1,18 +1,18 @@
 #include <sstream>
 #include <string>
 
-#include "navigation.h"
-#include "spaceship.h"
-#include "gamevars.h"
-#include "keyboard.h"
-#include "drawutil.h"
-#include "teleport.h"
-#include "objects.h"
-#include "camera.h"
-#include "player.h"
-#include "gllibs.h"
-#include "game.h"
-#include "hud.h"
+#include "navigation.hpp"
+#include "spaceship.hpp"
+#include "gamevars.hpp"
+#include "keyboard.hpp"
+#include "drawutil.hpp"
+#include "teleport.hpp"
+#include "objects.hpp"
+#include "camera.hpp"
+#include "player.hpp"
+#include "gllibs.hpp"
+#include "game.hpp"
+#include "hud.hpp"
 
 /*
 	CrossHair

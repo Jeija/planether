@@ -1,8 +1,8 @@
 // Quaternion utilities
 // partly taken from http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions
 
-#include "gllibs.h"
-#include "util.h"
+#include "gllibs.hpp"
+#include "util.hpp"
 
 #ifndef _QUATUTIL_H
 #define _QUATUTIL_H

@@ -1,8 +1,8 @@
 #include <map>
 
-#include "objects.h"
-#include "gllibs.h"
-#include "util.h"
+#include "objects.hpp"
+#include "gllibs.hpp"
+#include "util.hpp"
 
 #ifndef PLAYER_H
 #define PLAYER_H

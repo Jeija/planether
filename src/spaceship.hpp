@@ -1,8 +1,8 @@
-#include "navigation.h"
-#include "quatutil.h"
-#include "objects.h"
-#include "audio.h"
-#include "util.h"
+#include "navigation.hpp"
+#include "quatutil.hpp"
+#include "objects.hpp"
+#include "audio.hpp"
+#include "util.hpp"
 
 
 #ifndef _SPACESHIP_H

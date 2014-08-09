@@ -1,6 +1,6 @@
-#include "gllibs.h"
-#include "light.h"
-#include "util.h"
+#include "gllibs.hpp"
+#include "light.hpp"
+#include "util.hpp"
 
 void LightInformation::render (GLenum lightid)
 {

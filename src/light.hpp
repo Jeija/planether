@@ -3,10 +3,10 @@
 	Position is WorldObject's m_pos
 */
 
-//#include "gllibs.h"
+//#include "gllibs.hpp"
 #include <iostream>
 #include <vector>
-#include "util.h"
+#include "util.hpp"
 
 /// Piece of information about a light source
 class LightInformation

@@ -1,5 +1,5 @@
-#include "gllibs.h"
-#include "objects.h"
+#include "gllibs.hpp"
+#include "objects.hpp"
 
 #ifndef _SKYBOX_H
 #define _SKYBOX_H

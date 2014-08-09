@@ -1,23 +1,23 @@
-#include "gllibs.h"
+#include "gllibs.hpp"
 
 #include <iostream>
 #include <thread>
 #include <math.h>
 #include <chrono>
 
-#include "planetconfig.h"
-#include "environment.h"
-#include "spaceship.h"
-#include "keyboard.h"
-#include "drawutil.h"
-#include "gamevars.h"
-#include "player.h"
-#include "shader.h"
-#include "camera.h"
-#include "debug.h"
-#include "game.h"
-#include "util.h"
-#include "map.h"
+#include "planetconfig.hpp"
+#include "environment.hpp"
+#include "spaceship.hpp"
+#include "keyboard.hpp"
+#include "drawutil.hpp"
+#include "gamevars.hpp"
+#include "player.hpp"
+#include "shader.hpp"
+#include "camera.hpp"
+#include "debug.hpp"
+#include "game.hpp"
+#include "util.hpp"
+#include "map.hpp"
 
 // Returns position of the earth
 SimpleVec3d initUniverse(WorldEnvironment *w_env)

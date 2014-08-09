@@ -3,14 +3,14 @@
 #endif
 
 #include <iostream>
-#include "gllibs.h"
+#include "gllibs.hpp"
 
-#include "gamevars.h"
-#include "camera.h"
-#include "config.h"
-#include "player.h"
-#include "mouse.h"
-#include "game.h"
+#include "gamevars.hpp"
+#include "camera.hpp"
+#include "config.hpp"
+#include "player.hpp"
+#include "mouse.hpp"
+#include "game.hpp"
 #include "math.h"
 
 /// Preparation of mouse, only required on MS Windows

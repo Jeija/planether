@@ -1,9 +1,9 @@
 #include <fstream>
 #include <string>
-#include "gllibs.h"
+#include "gllibs.hpp"
 
-#include "drawutil.h"
-#include "splash.h"
+#include "drawutil.hpp"
+#include "splash.hpp"
 
 void drawSplashScreen_abstract(std::string screensfile)
 {

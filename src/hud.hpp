@@ -1,7 +1,7 @@
 #ifndef HUD_H
 #define HUD_H
 
-#include "objects.h"
+#include "objects.hpp"
 
 class TeleportTarget;
 class Image2d;

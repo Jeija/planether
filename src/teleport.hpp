@@ -1,7 +1,7 @@
 #include <string>
 
-#include "objects.h"
-#include "util.h"
+#include "objects.hpp"
+#include "util.hpp"
 
 #ifndef _TELEPORT_H
 #define _TELEPORT_H

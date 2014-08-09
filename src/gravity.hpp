@@ -2,7 +2,7 @@
 #define _GRAVITY_H
 
 #include <vector>
-#include "util.h"
+#include "util.hpp"
 
 class WorldObject;
 

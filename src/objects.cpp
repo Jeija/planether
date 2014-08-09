@@ -1,4 +1,4 @@
-#include "objects.h"
+#include "objects.hpp"
 
 /**
  * Moves the object by applying the laws of physics. Moves the object by its velocity and accelerates

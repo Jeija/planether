@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <math.h>
-#include "gllibs.h"
+#include "gllibs.hpp"
 
 class SimpleAngles;
 class SphericalVector3f;

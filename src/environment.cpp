@@ -5,10 +5,10 @@
 #include <mutex>
 #include <ctime>
 
-#include "environment.h"
-#include "spaceship.h"
-#include "gravity.h"
-#include "config.h"
+#include "environment.hpp"
+#include "spaceship.hpp"
+#include "gravity.hpp"
+#include "config.hpp"
 
 /*
 	World Environment

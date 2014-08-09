@@ -1,5 +1,5 @@
 #include <iostream>
-#include "util.h"
+#include "util.hpp"
 
 void dump_vector(SimpleVec3d vec)
 {

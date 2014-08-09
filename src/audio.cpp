@@ -2,13 +2,13 @@
 #include <dirent.h>
 #include <fstream>
 
-#include "environment.h"
-#include "gamevars.h"
-#include "player.h"
-#include "config.h"
-#include "allibs.h"
-#include "audio.h"
-#include "game.h"
+#include "environment.hpp"
+#include "gamevars.hpp"
+#include "player.hpp"
+#include "config.hpp"
+#include "allibs.hpp"
+#include "audio.hpp"
+#include "game.hpp"
 
 /**
  * \brief Prepares sound system

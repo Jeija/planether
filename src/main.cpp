@@ -1,30 +1,30 @@
 #include <assert.h>
 #include <iostream>
-#include "gllibs.h"
+#include "gllibs.hpp"
 #include <string>
 #include <vector>
 #include <time.h>
 
-#include "planetconfig.h"
-#include "environment.h"
-#include "spaceship.h"
-#include "quatutil.h"
-#include "gamevars.h"
-#include "keyboard.h"
-#include "shader.h"
-#include "skybox.h"
-#include "camera.h"
-#include "config.h"
-#include "player.h"
-#include "splash.h"
-#include "tests.h"
-#include "audio.h"
-#include "mouse.h"
-#include "main.h"
-#include "util.h"
-#include "game.h"
-#include "hud.h"
-#include "map.h"
+#include "planetconfig.hpp"
+#include "environment.hpp"
+#include "spaceship.hpp"
+#include "quatutil.hpp"
+#include "gamevars.hpp"
+#include "keyboard.hpp"
+#include "shader.hpp"
+#include "skybox.hpp"
+#include "camera.hpp"
+#include "config.hpp"
+#include "player.hpp"
+#include "splash.hpp"
+#include "tests.hpp"
+#include "audio.hpp"
+#include "mouse.hpp"
+#include "main.hpp"
+#include "util.hpp"
+#include "game.hpp"
+#include "hud.hpp"
+#include "map.hpp"
 
 /**
  * \brief Main function - starts the game

@@ -1,9 +1,9 @@
-#include "gamevars.h"
-#include "gravity.h"
-#include "objects.h"
-#include "config.h"
-#include "debug.h"
-#include "util.h"
+#include "gamevars.hpp"
+#include "gravity.hpp"
+#include "objects.hpp"
+#include "config.hpp"
+#include "debug.hpp"
+#include "util.hpp"
 
 /**
  * \brief Create a new GravityManager for objects

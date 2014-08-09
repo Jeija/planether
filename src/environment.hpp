@@ -15,7 +15,7 @@
 #include <thread>
 #include <mutex>
 
-#include "util.h"
+#include "util.hpp"
 
 class WorldObject;
 class StaticObject;

@@ -2,8 +2,8 @@
 #define OBJECTS_H
 
 #include <iostream>
-#include "util.h"
-#include "light.h"
+#include "util.hpp"
+#include "light.hpp"
 
 /*
 	Object classes

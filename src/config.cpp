@@ -4,8 +4,8 @@
 #include <sstream>
 
 #include "rapidjson/document.h"
-#include "config.h"
-#include "util.h"
+#include "config.hpp"
+#include "util.hpp"
 
 /**
  * \brief Initializes the ConfigurationManager that allows to get config options

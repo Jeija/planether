@@ -52,6 +52,9 @@ In order of importance.
 |                 | arrow keys and choose teleportation / navigation using up-down keys      |
 | **B**           | In navigation mode, move spaceship in direction of planet to navigate to |
 | **P/O**         | Change seed (during gameplay)                                            |
+| **Mouse wheel** | Fast-forward/backward of camera in space                                 |
+
+Depending on your mouse, you may also be able to use other mouse keys to move sideways or up-down with the camera.
 
 ## Bugs / Development / Questions
 You can report bugs in GitHub issues. New features or patches can be sent via GitHub pull requests (or directly eMailed to me). You can ask questions by eMailing me or using the comment section of the YouTube video for this game (channel norrepli). I may set up a forum and website for this game in case it becomes popular.

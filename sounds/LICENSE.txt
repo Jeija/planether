@@ -1,0 +1,5 @@
+scorched_1.ogg / scorched_2.ogg
+These tracks are shipped with the game "Scorched3D" (http://www.scorched3d.co.uk/) and were originally created by "Hans Highscore GbR" (http://www.hans-hiscore.de/). According to the Scorched3D copying information, their are licensed under the GNU General Public License. <http://www.gnu.org/licenses/>
+
+wz_menu.ogg / wz_track1.ogg / wz_track3.ogg / beep_*.ogg / spaceship_*.ogg
+These tracks are shipped with the game "Warzone2100". They are under the GNU General Public License Version 2 from Juni 1991 (http://www.gnu.org/licenses/gpl-2.0.html)

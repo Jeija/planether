@@ -1,0 +1,51 @@
+/**
+@mainpage Planether - A Pseudorealistic 3D Space Simulator
+
+Florian Euchner
+
+Mainpage last updated:
+2014-05-24
+
+PlanEther - Explore planets in the ether
+
+A small game in which you can discover our solar system
+of procedurally generated planets and stars that look somewhat similar
+to the real ones. Planets also have similar physical features such
+as their mass and size as the real ones. The distances between celestial
+bodys is also realistic.
+
+Nevertheless, the main goal of the game is to be fun; if that could not be guaranteed by the
+realistic features, the fun beats physics.
+
+The Spaceship
+-------------
+The spaceship however, is not supposed to be realistic. Its length project to real life would
+be approximately 50 kilometres. Also, its acceleration is heavily exaggerated.
+
+Features:
+---------
+- Mostly realistic proportions and physics
+- Procedurally generated planets with generation in vertex & fragment shader
+- Background music and sound effects, including the doppler effect with OpenAL
+- Navigation system with teleportation
+- Quaternion-based camera
+- Realistic background with HD Skybox out of NASA images
+
+Dependencies
+------------
+- OpenGL with GLU
+- FreeGLUT
+- OpenAL
+- Vorbis
+- GLEW
+- C++ (gcc / mingw / clang)
+- *SOIL, GLM and rapidjson are included*
+
+Other resources
+---------------
+- The SkyBox based on a real picture of the milky way as seen from earth from NASA as available [from their website](http://svs.gsfc.nasa.gov/vis/a000000/a003500/a003572/TychoSkymapII.t4_04096x02048.tif). According to their license terms, this image is not under any copyright and can be used for this project.
+- The sounds are based on sounds from other games such as Warzone2100 and Scorched3D. For more information on this, read the LICENSE.txt file in the sounds directory
+- Code snippets and inspiration is marked in the respective source files
+- SOIL, GLM and rapidjson as included in the src/ directory are under their respective licenses
+
+*/

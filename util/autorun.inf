@@ -1,0 +1,5 @@
+[AutoRun]
+open=start_planether.bat
+icon=planether.ico
+action=Planether starten
+label=Planether

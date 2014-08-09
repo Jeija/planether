@@ -1,0 +1,13 @@
+The skybox_*.png images are provided by the NASA on their website: http://svs.gsfc.nasa.gov/vis/a000000/a003500/a003572/
+According to their license policy, they are available for use in this game (http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html).
+
+Quote from http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html:
+--------------------------------------------------------------------------------------------------------
+NASA still images; audio files; video; and computer files used in the rendition of 3-dimensional models,
+such as texture maps and polygon data in any format, generally are not copyrighted. You may use NASA
+imagery, video, audio, and data files used for the rendition of 3-dimensional models for educational or
+informational purposes, including photo collections, textbooks, public exhibits, computer graphical
+simulations and Internet Web pages. This general permission extends to personal Web pages.
+--------------------------------------------------------------------------------------------------------
+
+All the other images are license under the CC-BY-SA license. See http://creativecommons.org/licenses/by-sa/4.0/ for more information.

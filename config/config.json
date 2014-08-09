@@ -1,0 +1,34 @@
+{
+	"_move_speed":"Keyboard / Mousekey moving speed when moving the player in km/s",
+	"move_speed": 8000,
+
+	"_mousewheel_move_speed":"Distance to move each time the mouse wheel is moved in km",
+	"mousewheel_move_speed": 1500,
+
+	"_spaceship_acceleration": "Acceleration of spaceship, in km/s^2",
+	"spaceship_acceleration": 100,
+
+	"_keyoard_rotate_speed": "Rotation speed for numpad keys, in radians per second",
+	"keyboard_rotate_speed": 0.4,
+
+	"_enable_anaglyph": "Sets whether anaglyph mode is enabled or not",
+	"enable_anaglyph": false,
+
+	"_anaglyph_intensity": "Intensity of 'sticking out' effect in anaglyph mode",
+	"anaglyph_intensity": 250,
+
+	"_skybox_depth": "Intensity of skybox depth impression in anaglyph mode",
+	"skybox_depth": 2.0,
+
+	"_anaglyph_eyedist": "Distance between eyes when using anaglyph mode, in km",
+	"anaglyph_eyedist": 0.2,
+
+	"_music_volume": "Volume of the background music, 1.0 is default gain",
+	"music_volume": 0.5,
+
+	"_seed": "Seed used for random numbers, e.g. in shaders",
+	"seed": 4,
+
+	"_prerotate_planets": "Pre-rotate planets so they are not in one line when the game starts",
+	"prerotate_planets": true
+}

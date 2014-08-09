@@ -33,7 +33,7 @@ Planether was developed under Archlinux, so it is the preferred platform (but of
 ### Windows
 (not recommended, I told you)
 
-You may not always get the latest version of the game, but you can download precompiled snapshots. Visit the files section of this GitHub page for downloads.
+You may not always get the latest version of the game, but you can download precompiled snapshots. Visit the releases section of this GitHub page for downloads.
 
 ## Controls
 In order of importance.
@@ -61,8 +61,6 @@ You can report bugs in GitHub issues. New features or patches can be sent via Gi
 
 Developer documentation is available, just execute `make doxygen` with doxygen installed in the planether directory. Open doc/doxygen/html/index.html in your browser to take a look at it.
 
-This game was written in the course of a school project.
-
 ## More docmentation? Cross-compilation?
-There is more documentation available in a pdf in German, see the files section of this GitHub page.
+There is more documentation available in [a pdf in German](http://mesecons.net/random/planether_dokumentation.pdf) as this game was written in the course of a school project.
 

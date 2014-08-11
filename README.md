@@ -22,7 +22,7 @@ Planether was developed under Archlinux, so it is the preferred platform (but of
 * Run the game using: `./bin/planether`
 * You will also find a starter for the game in the planether directory
 
-### Ubuntu
+### Debian & Ubuntu
 * Install dependencies using `sudo apt install g++ make git freeglut3-dev libopenal-dev libglew-dev libglu1-mesa-dev libogg-dev libvorbis-dev`
 * Download the sources; go to your preferred directory and `git clone https://github.com/Jeija/planether.git`
 * `cd planether`

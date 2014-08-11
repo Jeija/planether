@@ -38,21 +38,27 @@ You may not always get the latest version of the game, but you can download prec
 ## Controls
 In order of importance.
 
-| Key             | Function                                                                 |
-|:----------------|:-------------------------------------------------------------------------|
-| **V**           | Change camera view (bound, relative with rotation, relative, free)       |
-| **Arrow Keys**  | Rotate spaceship                                                         |
-| **C**           | Break rotation (initiated with arrow keys                                |
-| **WASD**        | Move camera in free / relative modes                                     |
-| **Space**       | Move camera up in free /relative modes                                   |
-| **E**           | Move camera down in free / relative modes                                |
-| **Page up**     | Turn on engine                                                           |
-| **Page down**   | Turn spaceship in opposite direction of flight                           |
-| **T**           | Open teleport dialog: Choose planet to teleport to using right-left      |
-|                 | arrow keys and choose teleportation / navigation using up-down keys      |
-| **B**           | In navigation mode, move spaceship in direction of planet to navigate to |
-| **P/O**         | Change seed (during gameplay)                                            |
-| **Mouse wheel** | Fast-forward/backward of camera in space                                 |
+| Key                | Function                                                                 |
+|:-------------------|:-------------------------------------------------------------------------|
+| **V**              | Change camera view (bound, relative with rotation, relative, free)       |
+| **Arrow Keys**     | Rotate spaceship                                                         |
+| **Mouse Movement** | Rotate camera (pitch, yaw)                                               |
+| **Mouse R/L Keys** | Rotate camera (roll)                                                     |
+| **C**              | Break rotation (initiated with arrow keys                                |
+| **WASD**           | Move camera in free / relative modes                                     |
+| **Space**          | Move camera up in free /relative modes                                   |
+| **E**              | Move camera down in free / relative modes                                |
+| **Page up**        | Turn on engine                                                           |
+| **Page down**      | Turn spaceship in opposite direction of flight                           |
+| **T**              | Open teleport dialog: Choose planet to teleport to using right-left      |
+|                    | arrow keys and choose teleportation / navigation using up-down keys      |
+| **B**              | In navigation mode, move spaceship in direction of planet to navigate to |
+| **+/-**            | Timelapse                                                                |
+| **P/O**            | Change seed (during gameplay)                                            |
+| **Mouse wheel**    | Fast-forward/backward of camera in space                                 |
+| **Q**              | Quit the game                                                            |
+| **Numpad**         | Alternative to mouse movement for camera rotation, make sure it uses     |
+|                    | number input mode (num key active)
 
 Depending on your mouse, you may also be able to use other mouse keys to move sideways or up-down with the camera.
 

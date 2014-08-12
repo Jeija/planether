@@ -5,6 +5,8 @@ A pseudorealistic 3d space simulation game written in C++.
 
 [![Build Status](https://travis-ci.org/Jeija/planether.svg?branch=master)](https://travis-ci.org/Jeija/planether)
 
+## [YouTube Video](https://www.youtube.com/watch?v=f7FtJkNxH2M)
+
 ## Screenshots
 ![Earth](http://mesecons.net/random/pscreens/s12.png)
 ![Saturn](http://mesecons.net/random/pscreens/s6.png)

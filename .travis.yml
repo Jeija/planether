@@ -1,0 +1,17 @@
+language: cpp
+compiler: gcc
+
+before_install:
+  # Update clang and g++ from ppas
+  - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+  - if [ "$CXX" == "clang++" ]; then sudo add-apt-repository -y ppa:h-rayflood/llvm; fi
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install g++ make git freeglut3-dev libopenal-dev libglew-dev libglu1-mesa-dev libogg-dev libvorbis-dev
+
+  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; export CC="gcc-4.8"; fi
+
+
+script: make

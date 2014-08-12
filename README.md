@@ -3,6 +3,8 @@ Planeteher
 
 A pseudorealistic 3d space simulation game written in C++.
 
+[![Build Status](https://travis-ci.org/Jeija/planether.svg?branch=master)](https://travis-ci.org/Jeija/planether)
+
 ### Aim
 Planether is supposed to show how fascinating space exploration and the solar system we live in can be. We can try to describe planets and stars with words, facts and numbers, but one can hardly grasp the enormous relations and distances between planets, stars or moons and how small we really are. Museums, pictures or models can help our imagination, but despite all these we lack a feel of how gigantic our cosmic neighbors really are.
 

@@ -5,6 +5,13 @@ A pseudorealistic 3d space simulation game written in C++.
 
 [![Build Status](https://travis-ci.org/Jeija/planether.svg?branch=master)](https://travis-ci.org/Jeija/planether)
 
+## Screenshots
+![Earth](http://mesecons.net/random/pscreens/s12.png)
+![Saturn](http://mesecons.net/random/pscreens/s6.png)
+![Mercury](http://mesecons.net/random/pscreens/s7.png)
+![Proxima centauri](http://mesecons.net/random/pscreens/s10.png)
+![Flying](http://mesecons.net/random/pscreens/s11.png)
+
 ### Aim
 Planether is supposed to show how fascinating space exploration and the solar system we live in can be. We can try to describe planets and stars with words, facts and numbers, but one can hardly grasp the enormous relations and distances between planets, stars or moons and how small we really are. Museums, pictures or models can help our imagination, but despite all these we lack a feel of how gigantic our cosmic neighbors really are.
 
@@ -40,27 +47,29 @@ You may not always get the latest version of the game, but you can download prec
 ## Controls
 In order of importance.
 
-| Key                | Function                                                                 |
-|:-------------------|:-------------------------------------------------------------------------|
-| **V**              | Change camera view (bound, relative with rotation, relative, free)       |
-| **Arrow Keys**     | Rotate spaceship                                                         |
-| **Mouse Movement** | Rotate camera (pitch, yaw)                                               |
-| **Mouse R/L Keys** | Rotate camera (roll)                                                     |
-| **C**              | Brake spaceship rotation (that was initiated with the arrow keys)        |
-| **WASD**           | Move camera in free / relative modes                                     |
-| **Space**          | Move camera up in free /relative modes                                   |
-| **E**              | Move camera down in free / relative modes                                |
-| **Page up**        | Turn on engine                                                           |
-| **Page down**      | Turn spaceship in opposite direction of flight                           |
-| **T**              | Open teleport dialog: Choose planet to teleport to using right-left      |
-|                    | arrow keys and choose teleportation / navigation using up-down keys      |
-| **B**              | In navigation mode, move spaceship in direction of planet to navigate to |
-| **+/-**            | Timelapse                                                                |
-| **P/O**            | Change seed (during gameplay)                                            |
-| **Mouse wheel**    | Fast-forward/backward of camera in space                                 |
-| **Q**              | Quit the game                                                            |
-| **Numpad**         | Alternative to mouse movement for camera rotation, make sure it uses     |
-|                    | number input mode (num key active)
+| Key                 | Function                                                                 |
+|:--------------------|:-------------------------------------------------------------------------|
+| **V**               | Change camera view (bound, relative with rotation, relative, free)       |
+| **Arrow Keys**      | Rotate spaceship                                                         |
+| **Mouse Movement**  | Rotate camera (pitch, yaw)                                               |
+| **Mouse R/L Keys**  | Rotate camera (roll)                                                     |
+| **C**               | Brake spaceship rotation (that was initiated with the arrow keys)        |
+| **WASD**            | Move camera in free / relative modes                                     |
+| **Space**           | Move camera up in free /relative modes                                   |
+| **E**               | Move camera down in free / relative modes                                |
+| **Page up**         | Turn on engine                                                           |
+| **Page down**       | Turn spaceship in opposite direction of flight                           |
+| **T**               | Open teleport dialog: Choose planet to teleport to using right-left      |
+|                     | arrow keys and choose teleportation / navigation using up-down keys      |
+| **B**               | In navigation mode, move spaceship in direction of planet to navigate to |
+| **+/-**             | Timelapse                                                                |
+| **F** / **Shift-F** | Switch to fullscreen / switch back to windowed mode                      |
+| **esc**             | Exit mouse capturing                                                     |
+| **P/O**             | Change seed (during gameplay)                                            |
+| **Mouse wheel**     | Fast-forward/backward of camera in space                                 |
+| **Q**               | Quit the game                                                            |
+| **Numpad**          | Alternative to mouse movement for camera rotation, make sure it uses     |
+|                     | number input mode (num key active)                                       |
 
 Depending on your mouse, you may also be able to use other mouse keys to move sideways or up-down with the camera.
 

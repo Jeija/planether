@@ -16,7 +16,6 @@ SRCS := $(wildcard  $(SRCDIR)*.cpp)
 SRCS += $(wildcard $(SOILDIR)*.c  )
 
 # Compiler / Linker Configuration
-CC		:= g++
 CFLAGS		:= -std=c++11 -pthread -Wall -O3 -fno-strict-aliasing
 CFLAGS_SOIL	:= -w
 CFLAGS_CROSS	:= -std=c++11 -pthread -w -DWIN32 -O3
@@ -39,10 +38,10 @@ all: $(OBJDIR) $(BINDIR) update_starter $(TARGET)
 	@echo Compilation succesful
 
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(BINDIR)$(TARGET) $(LIBS)
+	$(CXX) $(CFLAGS) $^ -o $(BINDIR)$(TARGET) $(LIBS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.cpp
-	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+	$(CXX) $(CFLAGS) -MMD -MP -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)

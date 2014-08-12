@@ -46,7 +46,7 @@ In order of importance.
 | **Arrow Keys**     | Rotate spaceship                                                         |
 | **Mouse Movement** | Rotate camera (pitch, yaw)                                               |
 | **Mouse R/L Keys** | Rotate camera (roll)                                                     |
-| **C**              | Break rotation (initiated with arrow keys                                |
+| **C**              | Brake spaceship rotation (that was initiated with the arrow keys)        |
 | **WASD**           | Move camera in free / relative modes                                     |
 | **Space**          | Move camera up in free /relative modes                                   |
 | **E**              | Move camera down in free / relative modes                                |

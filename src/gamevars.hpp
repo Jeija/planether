@@ -1,10 +1,10 @@
 #ifndef GAMEVARS_H
 #define GAMEVARS_H
 
-class Game;
-class Mouse;
-class KeyBoard;
 class ConfigurationManager;
+class KeyBoard;
+class Mouse;
+class Game;
 
 // Cannot be members of the Game class due to limitations of GLUT
 // (rendering/mouse/keyboard callbacks must be static, but GLUT is no C++ lib)

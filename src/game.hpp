@@ -1,15 +1,16 @@
 #ifndef _GAME_H
 #define _GAME_H
 
-class Camera;
-class Player;
-class SpaceShip;
-class CrossHair;
+class BackgroundMusicManager;
+class PhysicsInformation;
+class StaticEnvironment;
 class AudioEnvironment;
 class WorldEnvironment;
-class StaticEnvironment;
-class PhysicsInformation;
-class BackgroundMusicManager;
+class SpaceShip;
+class CrossHair;
+class Camera;
+class Player;
+
 
 /*
 	class Game is basically just a simple container for interfaces and especially settings;
@@ -25,7 +26,6 @@ class Game
 
 		void init();
 		void step();
-		static void checklose();
 
 		/// Returns a reference to the SpaceShip
 		SpaceShip *getSpaceship()

@@ -2,6 +2,7 @@
 #define HUD_H
 
 #include "objects.hpp"
+#include <map>
 
 class TeleportTarget;
 class Image2d;
@@ -27,6 +28,39 @@ class CrossHair : public StaticObject
 
 		bool m_hidden;
 		Image2d *m_img;
+};
+
+/// Points to planets on the HUD display
+class Game;
+class PlanetLocator : public StaticObject
+{
+	public:
+		PlanetLocator(Game *game);
+
+		void render(int x, int y);
+		void reshape(int width, int height);
+		void whileWorldMatrix(int window_w, int window_h);
+
+		// KeyBoard
+		void onSpecialKeyPress(int key);
+	private:
+		struct v2
+		{
+			v2(float _X, float _Y):
+				X(_X),
+				Y(_Y)
+			{}
+			v2(): v2(0.0f, 0.0f) {}
+			float X;
+			float Y;
+		};
+		std::map<std::string, PlanetLocator::v2> locations;
+
+		// Wrapper
+		static void onSpecialKeyPress_wrapper(int key, void *self);
+		bool m_hidden;
+
+		Game *m_game;
 };
 
 /// Text displaying relevant information in the top left of the screen

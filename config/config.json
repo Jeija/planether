@@ -8,6 +8,9 @@
 	"_spaceship_acceleration": "Acceleration of spaceship, in km/s^2",
 	"spaceship_acceleration": 100,
 
+	"_quick_respawn": "Don't restart the game when dying, just teleport the space ship to a safe space",
+	"quick_respawn": false,
+
 	"_keyoard_rotate_speed": "Rotation speed for numpad keys, in radians per second",
 	"keyboard_rotate_speed": 0.4,
 

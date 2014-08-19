@@ -10,6 +10,7 @@ class SpaceShip;
 class CrossHair;
 class Camera;
 class Player;
+class PlanetLocator;
 
 
 /*
@@ -76,8 +77,7 @@ class Game
 			{ return m_wireframe; };
 
 		/// Trigger a lose event - the game will be restarted
-		void triggerLose()
-			{ m_lost = true; }
+		void triggerLose();
 
 		/// Get whether the game has been lost
 		bool getLost()
@@ -107,6 +107,7 @@ class Game
 		BackgroundMusicManager *m_background_music;
 		CrossHair *m_crosshair;
 		PhysicsInformation *m_hud_physics;
+		PlanetLocator *m_hud_planetloc;
 		Camera *m_cam;
 
 		bool m_tport_overlay;

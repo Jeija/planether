@@ -137,6 +137,13 @@ class StaticObject : public GenericObject
 		 * \param y The new screen height
 		 */
 		virtual void reshape(int x, int y) {};
+
+		/**
+		 * \brief To be called by the camera when the world matrix is active
+		 * \param window_w The screen width
+		 * \param window_h The screen height
+		 */
+		virtual void whileWorldMatrix(int window_w, int window_h) {};
 };
 
 #endif

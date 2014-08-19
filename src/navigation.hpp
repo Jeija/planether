@@ -29,6 +29,7 @@ class Navigator
 		glm::quat getTargetQuat();
 
 		void setTarget(TeleportTarget *target);
+		TeleportTarget *getTarget() const {return m_target;}
 
 		bool getActive()
 			{ return m_active; }

@@ -158,6 +158,19 @@ void Game::step()
 	glutPostRedisplay();
 }
 
+void Game::triggerLose()
+{
+	if (config->getBool("quick_respawn", false))
+	{
+		getSpaceship()->setPos(SimpleVec3d(EARTH_DISTANCE * 0.9999, 0, 0));
+		getSpaceship()->setVelocity(SimpleVec3d(0, 0, 0));
+	}
+	else
+	{
+		m_lost = true;
+	}
+}
+
 /**
  * \brief Adds a value to the game speed.
  * \param val The value to add

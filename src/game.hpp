@@ -77,8 +77,7 @@ class Game
 			{ return m_wireframe; };
 
 		/// Trigger a lose event - the game will be restarted
-		void triggerLose()
-			{ m_lost = true; }
+		void triggerLose();
 
 		/// Get whether the game has been lost
 		bool getLost()

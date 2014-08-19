@@ -174,14 +174,12 @@ void PlanetLocator::onSpecialKeyPress_wrapper(int key, void *self)
  */
 void PlanetLocator::onSpecialKeyPress(int key)
 {
-	std::cerr << "keypress" << std::endl;
 	int window_w = glutGet(GLUT_WINDOW_WIDTH);
 	int window_h = glutGet(GLUT_WINDOW_HEIGHT);
 	if (key == GLUT_KEY_F1)
 		m_hidden = !m_hidden;
 	if (key == GLUT_KEY_F4)
 	{
-		std::cerr << "f4" << std::endl;
 		float vAmt = 20.0f / (float)window_h;
 		float hAmt = 20.0f / (float)window_w;
 
@@ -190,8 +188,7 @@ void PlanetLocator::onSpecialKeyPress(int key)
 				++it)
 		{
 			if (it->second.X > -hAmt && it->second.X < hAmt && it->second.Y > -vAmt && it->second.Y < vAmt)
-			{	
-				std::cerr << "at" << std::endl;			
+			{		
 				WorldEnvironment *world_env = m_game->getWorldEnv();
 				std::vector<WorldObject*> worldobjects = world_env->getObjects();
 				for (auto obj : worldobjects)
@@ -199,7 +196,6 @@ void PlanetLocator::onSpecialKeyPress(int key)
 					TeleportTarget *st = dynamic_cast<TeleportTarget*>(obj);
 					if (st && st->getTeleportName() == it->first)
 					{
-						std::cerr << "nav" << std::endl;
 						game->getSpaceship()->getNavigator()->setTarget(st);	
 						game->getSpaceship()->getNavigator()->start();
 						return;				

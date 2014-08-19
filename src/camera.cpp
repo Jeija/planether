@@ -110,6 +110,10 @@ void Camera::render()
 		// Normal mode, render the scene without any color mask / offset
 		beginWorldMatrix(window_w, window_h);
 		{
+			for (auto obj : m_static_env->getObjects())
+			{
+				obj->whileWorldMatrix(window_w, window_h);
+			}
 			renderWorldMatrix();
 		}
 		endWorldMatrix();

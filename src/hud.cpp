@@ -68,6 +68,149 @@ void CrossHair::onSpecialKeyPress(int key)
 		m_hidden = !m_hidden;
 }
 
+
+/*
+	PlanetLocator
+*/
+
+PlanetLocator::PlanetLocator(Game *game):
+	m_hidden(false),
+	m_game(game)
+{
+	reshape(glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
+	keyboard->registerSpecialKeyPressCallback(onSpecialKeyPress_wrapper, this);
+}
+
+void PlanetLocator::reshape(int width, int height)
+{
+	
+}
+
+#include <algorithm>
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <vector>
+#include "environment.hpp"
+#include "player.hpp"
+#include "teleport.hpp"
+#include "spaceship.hpp"
+#include "navigation.hpp"
+
+void PlanetLocator::render(int window_w, int window_h)
+{
+	if (m_hidden) return;
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	float vAmt = (5.0f / (float)window_h);
+	float hAmt = (5.0f / (float)window_w);
+
+	TeleportTarget *target = game->getSpaceship()->getNavigator()->getTarget();
+	for (std::map<std::string, PlanetLocator::v2>::const_iterator it = locations.begin();
+			it != locations.end();
+			++it)
+	{
+		if (target && target->getTeleportName() == it->first)
+			glColor3f(0.0f, 1.0f, 0.0f);
+
+		glRectf(it->second.X - hAmt, it->second.Y + vAmt, it->second.X + hAmt, it->second.Y - vAmt);
+
+		glRasterPos2f(it->second.X + 3*hAmt, it->second.Y);
+		glutBitmapString(GLUT_BITMAP_HELVETICA_12, (unsigned char *)it->first.c_str());
+
+		if (target && target->getTeleportName() == it->first)
+			glColor3f(1.0f, 1.0f, 1.0f);
+	}
+}
+
+void PlanetLocator::whileWorldMatrix(int window_w, int window_h)
+{
+	Player *player = m_game->getPlayer();
+	WorldEnvironment *world_env = m_game->getWorldEnv();
+	std::vector<WorldObject*> worldobjects = world_env->getObjects();
+	locations.clear();
+	for (auto obj : worldobjects)
+	{
+		std::string name = "";
+		{
+			TeleportTarget *st = dynamic_cast<TeleportTarget*>(obj);
+			if (!st)
+			{
+				continue;
+			}
+			else
+			{
+				name = st->getTeleportName();				
+			}
+		}
+
+		double centerX, centerY, centerZ = 0;
+		GLdouble modelviewMatrix[16], projectionMatrix[16];
+		GLint viewport[4];
+		glGetDoublev(GL_MODELVIEW_MATRIX, modelviewMatrix);
+		glGetDoublev(GL_PROJECTION_MATRIX, projectionMatrix);
+		glGetIntegerv(GL_VIEWPORT, viewport);
+		SimpleVec3d ppos = player->getPos();
+		gluProject(obj->getPos().x - ppos.x, obj->getPos().y - ppos.y, obj->getPos().z - ppos.z,
+				modelviewMatrix, projectionMatrix, viewport, &centerX, &centerY, &centerZ);		
+		float x = 2.0f * ((float)centerX / (float)window_w) - 1;
+		float y = 2.0f * ((float)centerY / (float)window_h) - 1;
+		if (centerZ < 1)
+			locations[name.c_str()] = PlanetLocator::v2(x, y);
+	}
+}
+
+/**
+ * \brief Wrapper function that calls onSpecialKeyPress
+ */
+void PlanetLocator::onSpecialKeyPress_wrapper(int key, void *self)
+{
+	((PlanetLocator*) self)->onSpecialKeyPress(key);
+}
+
+/**
+ * \brief Performs actions to the CrossHair when a key is pressed
+ * Toggles hidden value of the CrossHair when F1 is pressed.
+ */
+void PlanetLocator::onSpecialKeyPress(int key)
+{
+	std::cerr << "keypress" << std::endl;
+	int window_w = glutGet(GLUT_WINDOW_WIDTH);
+	int window_h = glutGet(GLUT_WINDOW_HEIGHT);
+	if (key == GLUT_KEY_F1)
+		m_hidden = !m_hidden;
+	if (key == GLUT_KEY_F4)
+	{
+		std::cerr << "f4" << std::endl;
+		float vAmt = 20.0f / (float)window_h;
+		float hAmt = 20.0f / (float)window_w;
+
+		for (std::map<std::string, PlanetLocator::v2>::const_iterator it = locations.begin();
+				it != locations.end();
+				++it)
+		{
+			if (it->second.X > -hAmt && it->second.X < hAmt && it->second.Y > -vAmt && it->second.Y < vAmt)
+			{	
+				std::cerr << "at" << std::endl;			
+				WorldEnvironment *world_env = m_game->getWorldEnv();
+				std::vector<WorldObject*> worldobjects = world_env->getObjects();
+				for (auto obj : worldobjects)
+				{
+					TeleportTarget *st = dynamic_cast<TeleportTarget*>(obj);
+					if (st && st->getTeleportName() == it->first)
+					{
+						std::cerr << "nav" << std::endl;
+						game->getSpaceship()->getNavigator()->setTarget(st);	
+						game->getSpaceship()->getNavigator()->start();
+						return;				
+					}
+				}
+				return;
+			}
+		}
+	}
+}
+
 /*
 	PhysicsInformation
 */

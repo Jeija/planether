@@ -32,6 +32,7 @@
 Game::Game() :
 m_crosshair(new CrossHair()),
 m_hud_physics(new PhysicsInformation),
+m_hud_planetloc(new PlanetLocator(this)),
 m_tport_overlay(false),
 m_seed(config->getInt("seed", 4)),
 m_wireframe(false),
@@ -75,7 +76,7 @@ void Game::init()
 {
 	// Camera position is determined by Player
 	m_player = new Player(SimpleVec3d(EARTH_DISTANCE * 0.9999, 0, 0), SimpleAngles(0, 0, 0));
-	m_cam = new Camera(m_world_env, m_static_env, m_player, new ShaderManager(), new SkyBox());
+	m_cam = new Camera(m_world_env, m_static_env, m_player, new ShaderManager(), new SkyBox());	
 
 	// Controls / Inputs
 	mouse->registerClickCallback(on_mouse_click_default, nullptr);
@@ -88,6 +89,7 @@ void Game::init()
 	// Actually initialize the game
 	m_static_env->addObject(m_crosshair);
 	m_static_env->addObject(m_hud_physics);
+	m_static_env->addObject(m_hud_planetloc);
 	SimpleVec3d earthpos = initUniverse(m_world_env); // World Map
 
 	/*

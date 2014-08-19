@@ -10,6 +10,7 @@ class SpaceShip;
 class CrossHair;
 class Camera;
 class Player;
+class PlanetLocator;
 
 
 /*
@@ -107,6 +108,7 @@ class Game
 		BackgroundMusicManager *m_background_music;
 		CrossHair *m_crosshair;
 		PhysicsInformation *m_hud_physics;
+		PlanetLocator *m_hud_planetloc;
 		Camera *m_cam;
 
 		bool m_tport_overlay;

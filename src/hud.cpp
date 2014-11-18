@@ -1,6 +1,7 @@
 #include <sstream>
 #include <string>
 
+#include "environment.hpp"
 #include "navigation.hpp"
 #include "spaceship.hpp"
 #include "gamevars.hpp"
@@ -73,90 +74,70 @@ void CrossHair::onSpecialKeyPress(int key)
 	PlanetLocator
 */
 
-PlanetLocator::PlanetLocator(Game *game):
-	m_hidden(false),
-	m_game(game)
+PlanetLocator::PlanetLocator():
+	m_hidden(true)
 {
-	reshape(glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
 	keyboard->registerSpecialKeyPressCallback(onSpecialKeyPress_wrapper, this);
 }
-
-void PlanetLocator::reshape(int width, int height)
-{
-	
-}
-
-#include <algorithm>
-#include <iostream>
-#include <math.h>
-#include <string>
-#include <vector>
-#include "environment.hpp"
-#include "player.hpp"
-#include "teleport.hpp"
-#include "spaceship.hpp"
-#include "navigation.hpp"
 
 void PlanetLocator::render(int window_w, int window_h)
 {
 	if (m_hidden) return;
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	float vAmt = (5.0f / (float)window_h);
-	float hAmt = (5.0f / (float)window_w);
+	float rectw = (5.0f / (float)window_w);
+	float recth = (5.0f / (float)window_h);
 
 	TeleportTarget *target = game->getSpaceship()->getNavigator()->getTarget();
-	for (std::map<std::string, PlanetLocator::v2>::const_iterator it = locations.begin();
-			it != locations.end();
-			++it)
+	std::string selected = getSelected();
+
+	for (auto label : m_labels)
 	{
-		if (target && target->getTeleportName() == it->first)
+		// Highlight targeted label
+		if (target && target->getTeleportName() == label.first)
 			glColor3f(0.0f, 1.0f, 0.0f);
-
-		glRectf(it->second.X - hAmt, it->second.Y + vAmt, it->second.X + hAmt, it->second.Y - vAmt);
-
-		glRasterPos2f(it->second.X + 3*hAmt, it->second.Y);
-		glutBitmapString(GLUT_BITMAP_HELVETICA_12, (unsigned char *)it->first.c_str());
-
-		if (target && target->getTeleportName() == it->first)
+		else if (selected == label.first)
+			glColor3f(1.0f, 0.0f, 0.0f);
+		else
 			glColor3f(1.0f, 1.0f, 1.0f);
+
+		// Highlight the label closest to the cursor
+
+		glRectf(label.second.x - rectw, label.second.y + recth,
+			label.second.x + rectw, label.second.y - recth);
+
+		glRasterPos2f(label.second.x + 3 * rectw, label.second.y - recth);
+		glutBitmapString(GLUT_BITMAP_HELVETICA_12, (unsigned char *)label.first.c_str());
 	}
 }
 
 void PlanetLocator::whileWorldMatrix(int window_w, int window_h)
 {
-	Player *player = m_game->getPlayer();
-	WorldEnvironment *world_env = m_game->getWorldEnv();
-	std::vector<WorldObject*> worldobjects = world_env->getObjects();
-	locations.clear();
-	for (auto obj : worldobjects)
-	{
-		std::string name = "";
-		{
-			TeleportTarget *st = dynamic_cast<TeleportTarget*>(obj);
-			if (!st)
-			{
-				continue;
-			}
-			else
-			{
-				name = st->getTeleportName();				
-			}
-		}
+	if (m_hidden) return;
+	m_labels.clear();
 
-		double centerX, centerY, centerZ = 0;
-		GLdouble modelviewMatrix[16], projectionMatrix[16];
-		GLint viewport[4];
-		glGetDoublev(GL_MODELVIEW_MATRIX, modelviewMatrix);
-		glGetDoublev(GL_PROJECTION_MATRIX, projectionMatrix);
-		glGetIntegerv(GL_VIEWPORT, viewport);
-		SimpleVec3d ppos = player->getPos();
-		gluProject(obj->getPos().x - ppos.x, obj->getPos().y - ppos.y, obj->getPos().z - ppos.z,
-				modelviewMatrix, projectionMatrix, viewport, &centerX, &centerY, &centerZ);		
-		float x = 2.0f * ((float)centerX / (float)window_w) - 1;
-		float y = 2.0f * ((float)centerY / (float)window_h) - 1;
-		if (centerZ < 1)
-			locations[name.c_str()] = PlanetLocator::v2(x, y);
+	for (auto obj : game->getWorldEnv()->getObjects())
+	{
+		TeleportTarget *planet = dynamic_cast<TeleportTarget*>(obj);
+		if (planet)
+		{
+			// Get ModelViewMatrix + Projectionmatrix + Viewport
+			glm::mat4x4 modelview, proj;
+			glm::ivec4 viewport;
+			glGetFloatv(GL_MODELVIEW_MATRIX, &modelview[0][0]);
+			glGetFloatv(GL_PROJECTION_MATRIX, &proj[0][0]);
+			glGetIntegerv(GL_VIEWPORT, &viewport[0]);
+
+			// Calculate label position on screen (2d pos)
+			SimpleVec3d diffvec = obj->getPos() - game->getPlayer()->getPos();
+			glm::vec3 center = glm::project(diffvec.normalize().toVec3(),
+				modelview, proj, viewport);
+
+			glm::vec2 labelpos;
+			labelpos.x = 2.0f * ((float)center.x / (float)window_w) - 1;
+			labelpos.y = 2.0f * ((float)center.y / (float)window_h) - 1;
+			if (center.z < 1) m_labels[planet->getTeleportName()] = labelpos;
+		}
 	}
 }
 
@@ -169,46 +150,33 @@ void PlanetLocator::onSpecialKeyPress_wrapper(int key, void *self)
 }
 
 /**
- * \brief Performs actions to the CrossHair when a key is pressed
- * Toggles hidden value of the CrossHair when F1 is pressed.
+ * \brief Toggle hidden when F3 is pressed
  */
 void PlanetLocator::onSpecialKeyPress(int key)
 {
-	std::cerr << "keypress" << std::endl;
-	int window_w = glutGet(GLUT_WINDOW_WIDTH);
-	int window_h = glutGet(GLUT_WINDOW_HEIGHT);
-	if (key == GLUT_KEY_F1)
-		m_hidden = !m_hidden;
-	if (key == GLUT_KEY_F4)
-	{
-		std::cerr << "f4" << std::endl;
-		float vAmt = 20.0f / (float)window_h;
-		float hAmt = 20.0f / (float)window_w;
+	if (key == GLUT_KEY_F3) m_hidden = !m_hidden;
+}
 
-		for (std::map<std::string, PlanetLocator::v2>::const_iterator it = locations.begin();
-				it != locations.end();
-				++it)
+/**
+ * \brief Get planet label the crosshair is closest to
+ */
+std::string PlanetLocator::getSelected()
+{
+	std::string selected;
+	float selected_distance = -1;
+
+	// Get label which is closest to the crosshair at (0/0)
+	for (auto label : m_labels)
+	{
+		float tdist = sqrt(label.second.x * label.second.x + label.second.y * label.second.y);
+		if (tdist < selected_distance || selected_distance == -1)
 		{
-			if (it->second.X > -hAmt && it->second.X < hAmt && it->second.Y > -vAmt && it->second.Y < vAmt)
-			{	
-				std::cerr << "at" << std::endl;			
-				WorldEnvironment *world_env = m_game->getWorldEnv();
-				std::vector<WorldObject*> worldobjects = world_env->getObjects();
-				for (auto obj : worldobjects)
-				{
-					TeleportTarget *st = dynamic_cast<TeleportTarget*>(obj);
-					if (st && st->getTeleportName() == it->first)
-					{
-						std::cerr << "nav" << std::endl;
-						game->getSpaceship()->getNavigator()->setTarget(st);	
-						game->getSpaceship()->getNavigator()->start();
-						return;				
-					}
-				}
-				return;
-			}
+			selected_distance = tdist;
+			selected = label.first;
 		}
 	}
+
+	return selected;
 }
 
 /*
@@ -361,6 +329,13 @@ m_action_selected(0)
 	m_actions.push_back(nav);
 
 	m_available_targets = getAllTeleportTargets();
+
+	// If available, use selected planet from PlanetLocator
+	if (!game->getPlanetLocator()->getHidden())
+	{
+		m_destination = game->getPlanetLocator()->getSelected();
+		m_target = getTeleportTarget(m_destination);
+	}
 }
 
 TeleportWindow::~TeleportWindow()

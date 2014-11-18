@@ -72,8 +72,13 @@ In order of importance.
 | **Q**               | Quit the game                                                            |
 | **Numpad**          | Alternative to mouse movement for camera rotation, make sure it uses     |
 |                     | number input mode (num key active)                                       |
+| F1                  | Toggle crosshair visibility                                              |
+| F2                  | Toggle physics data display visibility                                   |
+| F3                  | Toggle PlanetLocator visibility                                          |
 
 Depending on your mouse, you may also be able to use other mouse keys to move sideways or up-down with the camera.
+
+If the PlanetLocator is activated using F3, it will display locations of planets on small labels. You may hover over one of these labels so that it turns red and open the TeleportWindow in order to teleport to the selected planet / star.
 
 ## Bugs / Development / Questions
 You can report bugs in GitHub issues. New features or patches can be sent via GitHub pull requests (or directly eMailed to me). You can ask questions by eMailing me or using the comment section of the YouTube video for this game (channel norrepli). I may set up a forum and website for this game in case it becomes popular.

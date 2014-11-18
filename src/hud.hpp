@@ -35,32 +35,28 @@ class Game;
 class PlanetLocator : public StaticObject
 {
 	public:
-		PlanetLocator(Game *game);
+		PlanetLocator();
 
 		void render(int x, int y);
-		void reshape(int width, int height);
 		void whileWorldMatrix(int window_w, int window_h);
 
 		// KeyBoard
 		void onSpecialKeyPress(int key);
+
+		/// Get whether the HUD planets display is hidden (true) or visible (false)
+		bool getHidden()
+			{ return m_hidden; }
+
+		std::string getSelected();
+
 	private:
-		struct v2
-		{
-			v2(float _X, float _Y):
-				X(_X),
-				Y(_Y)
-			{}
-			v2(): v2(0.0f, 0.0f) {}
-			float X;
-			float Y;
-		};
-		std::map<std::string, PlanetLocator::v2> locations;
+		// List of labels (std::string) with related window positions
+		std::map<std::string, glm::vec2> m_labels;
 
 		// Wrapper
 		static void onSpecialKeyPress_wrapper(int key, void *self);
-		bool m_hidden;
 
-		Game *m_game;
+		bool m_hidden;
 };
 
 /// Text displaying relevant information in the top left of the screen

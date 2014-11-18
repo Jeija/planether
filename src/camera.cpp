@@ -111,9 +111,7 @@ void Camera::render()
 		beginWorldMatrix(window_w, window_h);
 		{
 			for (auto obj : m_static_env->getObjects())
-			{
 				obj->whileWorldMatrix(window_w, window_h);
-			}
 			renderWorldMatrix();
 		}
 		endWorldMatrix();
@@ -126,6 +124,8 @@ void Camera::render()
 		beginWorldMatrix(window_w, window_h, CAMERA_EYE_LEFT);
 		{
 			glColorMask(true, false, false, false);
+			for (auto obj : m_static_env->getObjects())
+				obj->whileWorldMatrix(window_w, window_h);
 			renderWorldMatrix();
 		}
 		endWorldMatrix();

@@ -32,7 +32,7 @@
 Game::Game() :
 m_crosshair(new CrossHair()),
 m_hud_physics(new PhysicsInformation),
-m_hud_planetloc(new PlanetLocator(this)),
+m_hud_planetloc(new PlanetLocator),
 m_tport_overlay(false),
 m_seed(config->getInt("seed", 4)),
 m_wireframe(false),

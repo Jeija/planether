@@ -6,11 +6,11 @@ class PhysicsInformation;
 class StaticEnvironment;
 class AudioEnvironment;
 class WorldEnvironment;
+class PlanetLocator;
 class SpaceShip;
 class CrossHair;
 class Camera;
 class Player;
-class PlanetLocator;
 
 
 /*
@@ -51,6 +51,9 @@ class Game
 		/// Returns a reference to the Camera
 		Camera *getCamera()
 			{ return m_cam; }
+
+		PlanetLocator *getPlanetLocator()
+			{ return m_hud_planetloc; }
 
 		/// Set whether an overlay captures keyboard input
 		void setTportOverlay(bool val)

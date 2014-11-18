@@ -72,9 +72,9 @@ In order of importance.
 | **Q**               | Quit the game                                                            |
 | **Numpad**          | Alternative to mouse movement for camera rotation, make sure it uses     |
 |                     | number input mode (num key active)                                       |
-| F1                  | Toggle crosshair visibility                                              |
-| F2                  | Toggle physics data display visibility                                   |
-| F3                  | Toggle PlanetLocator visibility                                          |
+| **F1**              | Toggle crosshair visibility                                              |
+| **F2**              | Toggle physics data display visibility                                   |
+| **F3**              | Toggle PlanetLocator visibility                                          |
 
 Depending on your mouse, you may also be able to use other mouse keys to move sideways or up-down with the camera.
 

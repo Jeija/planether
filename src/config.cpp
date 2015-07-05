@@ -23,7 +23,7 @@ ConfigurationManager::ConfigurationManager()
 	std::string json_code;
 
 	file.open(getBasedir() + CONFIG_PATH);
-	assert(file != nullptr);
+	assert(file.good());
 
 	filebuf << file.rdbuf();
 	json_code = filebuf.str();

@@ -41,6 +41,16 @@ Planether was developed under Archlinux, so it is the preferred platform (but of
 * Run the game using: `./bin/planether`
 * You will also find a starter for the game in the planether directory
 
+### Mac OS X
+* Install the development tools using `xcode-select --install`
+* Download and install [MacPorts](https://www.macports.org/install.php).
+* Install dependencies using `sudo port install libvorbis glew`
+* Download the sources; go to your preferred directory and `git clone https://github.com/Jeija/planether.git`
+* `cd planether`
+* `export PATH=/opt/local/bin:/opt/local/sbin:$PATH; export LDFLAGS=-L/opt/local/lib; export CPPFLAGS='-isystem /opt/local/include'`
+* `make -j2` (You may also want to use higher numbers after -j on multicore systems for faster compilation)
+* Run the game using: `./bin/planether`
+
 ### Windows
 (not recommended, I told you)
 

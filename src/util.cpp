@@ -219,7 +219,19 @@ void randomPlanetPosition(SimpleVec3d *pos, SimpleVec3d *vel, SimpleVec3d gravce
 #define MAX_PATHLEN 1024
 
 // Run-in-place edition for Unixes (Linux / FreeBSD)
-#ifndef PLANETHER_WINDOWS // Linux
+#ifdef __APPLE__
+#include <mach-o/dyld.h>
+std::string getBasedir()
+{
+	char buf[MAX_PATHLEN];
+	uint32_t size = MAX_PATHLEN;
+	_NSGetExecutablePath(buf, &size);
+	std::string path = std::string(buf);
+	path = path.substr(0, path.find_last_of(DIR_DELIM));	// now in BASE/bin
+	path = path.substr(0, path.find_last_of(DIR_DELIM));	// now in BASE
+	return path + DIR_DELIM;
+}
+#elif !defined(PLANETHER_WINDOWS) // Linux
 #include <unistd.h>
 #include <cstring>
 

@@ -20,7 +20,12 @@ CFLAGS		:= -std=c++11 -pthread -Wall -O3 -fno-strict-aliasing
 CFLAGS_SOIL	:= -w
 CFLAGS_CROSS	:= -std=c++11 -pthread -w -DWIN32 -O3
 CFLAGS_EMS	:= -std=c++11 -Wall
-LIBS		:= -lm -lGL -lGLU -lglut -lGLEW -lopenal -lvorbisfile
+LIBS		:= -lm
+ifeq "$(shell uname)" "Darwin"
+LIBS		:= $(LIBS) -framework OpenGL -framework GLUT -framework OpenAL -lglew -framework CoreFoundation -lvorbisfile
+else
+LIBS		:= $(LIBS) -lGL -lGLU -lglut -lGLEW -lopenal -lvorbisfile
+endif
 
 # Cross Compilation (Windows)
 CROSSCC		:= i686-w64-mingw32-g++
@@ -38,10 +43,10 @@ all: $(OBJDIR) $(BINDIR) update_starter $(TARGET)
 	@echo Compilation succesful
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CFLAGS) $^ -o $(BINDIR)$(TARGET) $(LIBS)
+	$(CXX) $(CFLAGS) $(LDFLAGS) $^ -o $(BINDIR)$(TARGET) $(LIBS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.cpp
-	$(CXX) $(CFLAGS) -MMD -MP -c $< -o $@
+	$(CXX) $(CFLAGS) $(CPPFLAGS) -MMD -MP -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
